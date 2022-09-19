@@ -1,0 +1,1 @@
+export { renderStatic } from "./renderer";
