@@ -1,6 +1,6 @@
 import {
   IndentDirectionT,
-  IndentNamesT,
+  IndentSizes,
   MarginPropsT,
   PaddingPropsT,
 } from "./types";
@@ -14,7 +14,7 @@ type DirectionDictionaryT =
   | Record<keyof MarginPropsT, IndentDirectionT>;
 
 type GetCurrentIndentStyleHandlerT = (
-  type: IndentNamesT,
+  type: IndentSizes,
   direction: IndentDirectionT
 ) => string[];
 

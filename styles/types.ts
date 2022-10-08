@@ -1,53 +1,65 @@
-import { NamesOfBreakpoints } from "./constants";
+export enum Breakpoints {
+    desktopXXLG = "1920px",
+    desktopXLG = "1920px",
+    desktopLG = "1600px",
+    desktopMD = "1440px",
+    desktopSM = "1280px",
+    tabletLG = "1024px",
+    tabletSM = "768px",
+    phone = "600px",
+}
 
-export type IndentNamesT =
-  | "xxlg"
-  | "xlg"
-  | "lg"
-  | "mdld"
-  | "md"
-  | "mdsm"
-  | "sm"
-  | "xsm"
-  | "xxsm"
-  | "zero";
+export const enum IndentSizes {
+    ZERO,
+    XXSM,
+    XSM,
+    SM,
+    MDSM,
+    MD,
+    MDLG,
+    LG,
+    XLG,
+    XXLG,
+}
+
+export const enum FontSizes {
+    H1,
+    H2,
+    H3,
+    text,
+    caption
+}
 
 export type IndentDirectionT =
-  | "default"
-  | "top"
-  | "bottom"
-  | "left"
-  | "right"
-  | "vertical"
-  | "horizontal";
+    | "default"
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "vertical"
+    | "horizontal";
 
-export type FontSizeNamesT = "h1" | "h2" | "h3" | "text" | "caption";
+export type NamesTypeT = FontSizes | IndentSizes;
 
-export type NamesTypeT = FontSizeNamesT | IndentNamesT;
-
-export type NamesOfBreakpointsT = keyof typeof NamesOfBreakpoints;
-
-export type DictionaryT = Record<
-  NamesOfBreakpointsT,
-  Record<NamesTypeT, string>
->;
+export type IndentsT = Record<Breakpoints, Record<IndentSizes, string>>;
+export type FontSizesT = Record<Breakpoints, Record<FontSizes, string>>;
 
 export type PaddingPropsT = {
-  px?: IndentNamesT;
-  py?: IndentNamesT;
-  pt?: IndentNamesT;
-  pb?: IndentNamesT;
-  pl?: IndentNamesT;
-  pr?: IndentNamesT;
-  p?: IndentNamesT;
+    px?: IndentSizes;
+    py?: IndentSizes;
+    pt?: IndentSizes;
+    pb?: IndentSizes;
+    pl?: IndentSizes;
+    pr?: IndentSizes;
+    p?: IndentSizes;
 };
 
 export type MarginPropsT = {
-  mx?: IndentNamesT;
-  my?: IndentNamesT;
-  mt?: IndentNamesT;
-  mb?: IndentNamesT;
-  ml?: IndentNamesT;
-  mr?: IndentNamesT;
-  m?: IndentNamesT;
+    mx?: IndentSizes;
+    my?: IndentSizes;
+    mt?: IndentSizes;
+    mb?: IndentSizes;
+    ml?: IndentSizes;
+    mr?: IndentSizes;
+    m?: IndentSizes;
 };

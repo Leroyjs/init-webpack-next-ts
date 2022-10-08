@@ -1,4 +1,4 @@
-import { breakpointsWidth, subsequenceOfBreakpoints } from "./constants";
+import { breakpointsWidth, Breakpoints } from "./constants";
 
 import facepaint from "facepaint";
 
@@ -11,7 +11,7 @@ const getMediaMaxWidthWithValueInPx = (value: string) =>
   getMediaMaxWidth(value);
 
 const mediaQuery = facepaint(
-  subsequenceOfBreakpoints
+  Breakpoints
     .map((breakpointName) =>
       getMediaMaxWidthWithValueInPx(breakpointsWidth[breakpointName])
     )
