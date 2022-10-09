@@ -1,1 +1,2 @@
-export { renderStatic } from "./renderer";
+export {renderStatic} from "./renderer";
+export {useVH} from "./useVH";
