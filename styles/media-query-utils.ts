@@ -1,22 +1,18 @@
-import { breakpointsWidth, Breakpoints } from "./constants";
+import { Breakpoints, subsequenceOfBreakpoints } from "./constants";
 
 import facepaint from "facepaint";
 
-const getMedia = (condition: string) => (value: string) =>
-  `@media(${condition}: ${value})`;
+const getMedia = (condition: string) => (value: string) => `@media(${condition}: ${value})`;
 
 const getMediaMaxWidth = getMedia("max-width");
 
-const getMediaMaxWidthWithValueInPx = (value: string) =>
-  getMediaMaxWidth(value);
+const getMediaMaxWidthWithValueInPx = (value: string) => getMediaMaxWidth(value);
 
 const mediaQuery = facepaint(
-  Breakpoints
-    .map((breakpointName) =>
-      getMediaMaxWidthWithValueInPx(breakpointsWidth[breakpointName])
-    )
+  subsequenceOfBreakpoints
+    .map((breakpointName) => getMediaMaxWidthWithValueInPx(breakpointName))
     .slice(1)
 );
 
-export const getResponsiveStyle = (styleName: string) => (values: string[]) =>
+export const getResponsiveStyle = (styleName: string) => (values: (string | undefined)[]) =>
   mediaQuery({ [styleName]: values });

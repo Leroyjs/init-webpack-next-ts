@@ -1,6 +1,7 @@
 import Head from "next/head";
 import type { NextPage } from "next";
-
+import { getCurrentDictionaryValue } from "../styles/get-styles-utils";
+getCurrentDictionaryValue;
 const Home: NextPage = () => {
   return (
     <div>
